@@ -1,6 +1,6 @@
 <template>
   <div class="login">
-    <div class="loginForm">
+    <div class="loginForm" id="loginForm">
       <div class="loginHint">登&emsp;录</div>
       <el-form>
         <el-form-item label="用户名">
@@ -24,6 +24,13 @@ export default {
     return {
       username: "user",
       password: "pass"
+    }
+  },
+
+  mounted() {
+    let windowWidth = window.innerWidth;
+    if (windowWidth < 768) {
+      document.getElementById('loginForm').style.width = '100%';
     }
   },
 
@@ -70,7 +77,6 @@ export default {
   right: 0;
   width: 25%;
   height: 100%;
-  border-radius: 20px;
   display: flex;
   flex-direction: column;
   justify-content: left;
