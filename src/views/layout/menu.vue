@@ -49,6 +49,13 @@ export default {
     }
   },
 
+  mounted() {
+    let windowWidth = window.innerWidth;
+    if (windowWidth < 768) {
+      this.$store.commit('setCollapse', true);
+    }
+  },
+
   methods: {
     handleSelect(index, key, item) {
       console.log(index, key, item);
