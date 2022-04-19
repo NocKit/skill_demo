@@ -44,7 +44,8 @@
         :current-page="pageData.currentPage"
         :page-sizes="pageData.pageSizes"
         :page-size="pageData.pageSize"
-        layout="total, sizes, prev, pager, next, jumper"
+        :pager-count="pageCount"
+        :layout="pageLayout"
         :total="pageData.total">
     </el-pagination>
     </div>
@@ -109,7 +110,18 @@ export default {
             return a.localeCompare(b);
           }
         }
-      ]
+      ],
+      pageLayout:'total, sizes, prev, pager, next, jumper',
+      pageCount: 7,
+    }
+  },
+
+  mounted() {
+    let windowWidth = window.innerWidth;
+    if (windowWidth < 768) {
+      document.getElementsByClassName('pageBox')[0].style.textAlign = 'left';
+      this.pageCount = 3
+      this.pageLayout = 'total, prev, pager, next'
     }
   },
 
