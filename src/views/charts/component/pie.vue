@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="pieBox">
     <div id="pieChart" class="pieChart"></div>
   </div>
 </template>
@@ -93,6 +93,11 @@ export default {
 </script>
 
 <style scoped>
+.pieBox{
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+}
 .pieChart {
   display: inline-block;
   height: 100%;

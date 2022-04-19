@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="barBox">
     <div id="barChart" class="barChart"></div>
   </div>
 </template>
@@ -72,8 +72,12 @@ export default {
   }
 }
 </script>
-
 <style scoped>
+.barBox{
+  height: 100%;
+  width: 100%;
+  display: inline-block;
+}
 .barChart {
   display: inline-block;
   height: 100%;
