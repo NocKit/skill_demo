@@ -4,7 +4,7 @@
       <search-bar
           @search="search"
       ></search-bar>
-      <div>
+      <div class="addBar">
         <el-button @click="addNew" type="primary">新增</el-button>
       </div>
       <search-result
@@ -188,6 +188,9 @@ export default {
 </style>
 
 <style lang="less" scoped>
+.addBar{
+  margin-top: 10px;
+}
 .searchResult {
   margin-top: 20px;
 
